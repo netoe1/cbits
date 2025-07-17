@@ -28,9 +28,9 @@ typedef enum
     LOW = 0
 } Bit;
 
-Bit bit_and(Bit a, Bit b);
-Bit bit_xor(Bit a, Bit b);
-Bit bit_or(Bit a, Bit b);
-void bit_print(Bit a);
+Bit bit_and(Bit a, Bit b); // Make AND operation between two bits.
+Bit bit_xor(Bit a, Bit b); // Make XOR operation between two bits.
+Bit bit_or(Bit a, Bit b);  // Make OR operation between two bits.
+void bit_print(Bit a);     // Print on terminal the *integer* value of a bit.
 
 #endif
