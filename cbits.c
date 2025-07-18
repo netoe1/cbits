@@ -78,3 +78,24 @@ void bit_print(Bit a)
     validateBit(a);
     printf("%d", (int)a);
 }
+
+Bit xorGate(Bit bits[], size_t n_bits)
+{
+    if (n_bits <= 0)
+    {
+        fprintf(stderr, "cbits.c-err: n_bits parameter shouldn't be equal or less than zero.");
+        exit(-1);
+    }
+
+    if (!bits)
+    {
+        fprintf(stderr, "cbits.c-err: invalid array for bits.");
+        exit(-1);
+    }
+
+    Bit result;
+
+    for (int i = 0; i < n_bits - 1; i++)
+    {
+    }
+}

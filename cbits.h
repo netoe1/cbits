@@ -33,4 +33,5 @@ Bit bit_xor(Bit a, Bit b); // Make XOR operation between two bits.
 Bit bit_or(Bit a, Bit b);  // Make OR operation between two bits.
 void bit_print(Bit a);     // Print on terminal the *integer* value of a bit.
 
+Bit xorGate(Bit bits[], size_t n_bits); // Define the inputs of one band bits and the inputs.
 #endif
