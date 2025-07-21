@@ -1,5 +1,6 @@
 /*
- * High-level Bit Operations Library
+    /*
+ * Bit Operations Library
  *
  * Implementation of basic bitwise operations using a custom Bit enum (HIGH/LOW).
  *
@@ -19,10 +20,20 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef CBITS_H
-#define CBITS_H
-#include <stdbool.h>
-#include "bit-impl.h"
-#include "operations.h"
-#include "gates.h"
+ 
+
+#ifndef GATES_H
+#define GATES_H
+#include <stdlib.h>
+#include "cbits.h"
+
+typedef enum
+{
+    AND,
+    OR
+
+} Gates_Types;
+
+Bit gateBitToBit(Gates_Types GATE_SELECT, Bit bits[], size_t n);
+
 #endif
