@@ -1,8 +1,16 @@
-CBITS = cbits.c
-OPERATIONS = operations.c
-GATES = gates.c
-MAIN = main.c
+# Compiler
 CC = gcc 
 
+# .c files
+CBITS = cbits
+OPERATIONS = operations
+GATES = gates
+MAIN = main
+
+
 all:
-$(CC) -o main $(CBITS) $(OPERATIONS) $(GATES) $(MAIN)
+	$(CC) -o main $(CBITS).c $(OPERATIONS).c $(GATES).c $(MAIN).c
+
+clean:
+	rm -rf main .vscode
+	rm -rf *.bin *.obj
