@@ -20,8 +20,6 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
- 
-
 #ifndef GATES_H
 #define GATES_H
 #include <stdlib.h>
@@ -30,7 +28,11 @@
 typedef enum
 {
     AND,
-    OR
+    OR,
+    XOR,
+    XNOR,
+    NOR,
+    NAND
 
 } Gates_Types;
 

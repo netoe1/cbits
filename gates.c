@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 #include "gates.h"
 #include "cbits.h"
 
@@ -6,7 +8,7 @@ Bit gateBitToBit(Gates_Types GATE_SELECT, Bit bits[], size_t n)
     if (!bits || n == 0)
     {
         puts("Error: bits not defined or size is 0.");
-        return;
+        exit(-1);
     }
 
     Bit (*funct)(Bit, Bit) = NULL;
@@ -21,7 +23,7 @@ Bit gateBitToBit(Gates_Types GATE_SELECT, Bit bits[], size_t n)
         break;
     default:
         puts("Error: Invalid gate type!");
-        return;
+        exit(-1);
     }
 
     Bit result = bits[0];
@@ -31,5 +33,5 @@ Bit gateBitToBit(Gates_Types GATE_SELECT, Bit bits[], size_t n)
         result = funct(result, bits[i]);
     }
 
-    printf("Result: %d\n", result);
+    return result;
 }

@@ -1,2 +1,8 @@
+CBITS = cbits.c
+OPERATIONS = operations.c
+GATES = gates.c
+MAIN = main.c
+CC = gcc 
+
 all:
-gcc -o main cbit.c main.c
+$(CC) -o main $(CBITS) $(OPERATIONS) $(GATES) $(MAIN)
