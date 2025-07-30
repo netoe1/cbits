@@ -1,30 +1,34 @@
 # Copyright 2025 Ely Torres Neto
+# Licensed under the Apache License, Version 2.0
 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+CC = gcc
+CFLAGS = -Wall
 
-# http://www.apache.org/licenses/LICENSE-2.0
+# Arquivos fonte e objetos
+SRCS = operations.c gates.c main.c
+OBJS = operations.o gates.o main.o
 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Executável final
+TARGET = main
 
-# Compiler
-CC = gcc 
-
-# .c files
-CBITS = cbits
-OPERATIONS = operations
-GATES = gates
-MAIN = main
+all: $(TARGET)
 
 
-all:
-	$(CC) -o main $(CBITS).c $(OPERATIONS).c $(GATES).c $(MAIN).c
+# Linka o executável a partir dos objetos
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+	ar rcs libcbits.a operations.o gates.o
+
+
+# Regras para compilar cada objeto
+operations.o: operations.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+gates.o: gates.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf main .vscode
-	rm -rf *.bin *.obj
+	rm -f $(OBJS) $(TARGET) *.bin *.obj
