@@ -71,5 +71,5 @@ Bit bit_not(Bit a)
 void bit_print(Bit a)
 {
     validateBit(a);
-    printf("%d", (int)a);
+    printf("%d\n", (int)a);
 }
